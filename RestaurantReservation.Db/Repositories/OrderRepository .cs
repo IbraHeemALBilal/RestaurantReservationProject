@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RestaurantReservation.Db.Entities;
+
+namespace RestaurantReservation.Db.Repositories
+{
+    public class OrderRepository : IRepository<Order>
+    {
+        private readonly RestaurantReservationDbContext _dbContext;
+
+        private static OrderRepository _instance;
+
+        private OrderRepository(RestaurantReservationDbContext dbContext)
+        {
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+        }
+
+        public static OrderRepository Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    var restaurantReservationDbContext = RestaurantReservationDbContext.Instance;
+                    _instance = new OrderRepository(restaurantReservationDbContext);
+                }
+                return _instance;
+            }
+        }
+
+        public async Task<IEnumerable<Order>> GetAllAsync()
+        {
+            return await _dbContext.Orders.ToListAsync();
+        }
+
+        public async Task<Order> GetByIdAsync(int id)
+        {
+            return await _dbContext.Orders.FindAsync(id);
+        }
+
+        public async Task CreateAsync(Order order)
+        {
+            _dbContext.Orders.Add(order);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Order order)
+        {
+            _dbContext.Orders.Update(order);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var order = await _dbContext.Orders.FindAsync(id);
+            if (order != null)
+            {
+                _dbContext.Orders.Remove(order);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+    }
+}

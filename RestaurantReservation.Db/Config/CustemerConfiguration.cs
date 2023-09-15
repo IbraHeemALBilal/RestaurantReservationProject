@@ -20,7 +20,9 @@ namespace RestaurantReservation.Db.Config
             builder.Property(x => x.FirstName).IsRequired();
             builder.Property(x => x.LastName).IsRequired();
             builder.Property(x => x.Email).IsRequired();
+            builder.HasIndex(x => x.Email).IsUnique();
             builder.Property(x => x.PhoneNumber).IsRequired();
+            builder.HasIndex(x => x.PhoneNumber).IsUnique();
 
             builder.HasMany(c => c.Reservations)
             .WithOne(r => r.Customer)

@@ -19,6 +19,7 @@ namespace RestaurantReservation.Db.Config
             builder.Property(r => r.Name).IsRequired().HasMaxLength(255);
             builder.Property(r => r.Address).HasMaxLength(255);
             builder.Property(r => r.PhoneNumber).HasMaxLength(20);
+            builder.HasIndex(r => r.PhoneNumber).IsUnique();
             builder.Property(r => r.OpeningHours).HasMaxLength(100);
 
             builder.HasMany(r => r.Employees)
