@@ -1,7 +1,7 @@
-﻿using RestaurantReservation.Db.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using RestaurantReservation.Db.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +30,7 @@ namespace RestaurantReservation.Db.Repositories
                 return _instance;
             }
         }
-        public async Task<IEnumerable<Customer>> GetAllAsync()
+        public async Task<List<Customer>> GetAllAsync()
         {
             return await _dbContext.Customers.ToListAsync();
         }

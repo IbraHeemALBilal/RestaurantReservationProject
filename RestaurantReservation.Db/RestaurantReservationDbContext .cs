@@ -16,7 +16,7 @@ namespace RestaurantReservation.Db
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 
-        private RestaurantReservationDbContext()
+        public RestaurantReservationDbContext()
         {
         }
 

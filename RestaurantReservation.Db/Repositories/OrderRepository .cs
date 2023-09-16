@@ -31,7 +31,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<IEnumerable<Order>> GetAllAsync()
+        public async Task<List<Order>> GetAllAsync()
         {
             return await _dbContext.Orders.ToListAsync();
         }
@@ -61,6 +61,22 @@ namespace RestaurantReservation.Db.Repositories
                 _dbContext.Orders.Remove(order);
                 await _dbContext.SaveChangesAsync();
             }
+        }
+
+        public async Task<decimal> CalculateAverageOrderAmountAsync(int employeeId)
+        {
+            var employeeWithOrders = await _dbContext.Employees
+                .Where(e => e.EmployeeId == employeeId)
+                .Include(e => e.Orders)
+                .FirstOrDefaultAsync();
+
+            if (employeeWithOrders != null)
+            {
+                var averageTotalAmount = employeeWithOrders.Orders.Average(order => order.TotalAmount);
+                return averageTotalAmount;
+            }
+
+            return 0; 
         }
     }
 }

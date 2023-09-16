@@ -29,6 +29,11 @@ namespace RestaurantReservation.Db.Config
                 .HasForeignKey(r => r.TableId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            builder.HasMany(r => r.Orders)
+                .WithOne(o => o .Reservation)
+                .HasForeignKey(o => o.ReservationId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             builder.HasData(LoadReservations());
         }
 

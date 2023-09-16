@@ -280,7 +280,7 @@ namespace RestaurantReservation.Db.Migrations
                         {
                             OrderId = 1,
                             EmployeeId = 1,
-                            OrderDate = new DateTime(2023, 9, 16, 13, 55, 56, 107, DateTimeKind.Local).AddTicks(6941),
+                            OrderDate = new DateTime(2023, 9, 16, 22, 42, 0, 865, DateTimeKind.Local).AddTicks(9500),
                             ReservationId = 1,
                             TotalAmount = 45.99m
                         },
@@ -288,7 +288,7 @@ namespace RestaurantReservation.Db.Migrations
                         {
                             OrderId = 2,
                             EmployeeId = 2,
-                            OrderDate = new DateTime(2023, 9, 17, 13, 55, 56, 107, DateTimeKind.Local).AddTicks(6978),
+                            OrderDate = new DateTime(2023, 9, 17, 22, 42, 0, 865, DateTimeKind.Local).AddTicks(9549),
                             ReservationId = 2,
                             TotalAmount = 62.50m
                         },
@@ -296,7 +296,7 @@ namespace RestaurantReservation.Db.Migrations
                         {
                             OrderId = 3,
                             EmployeeId = 3,
-                            OrderDate = new DateTime(2023, 9, 18, 13, 55, 56, 107, DateTimeKind.Local).AddTicks(6980),
+                            OrderDate = new DateTime(2023, 9, 18, 22, 42, 0, 865, DateTimeKind.Local).AddTicks(9553),
                             ReservationId = 3,
                             TotalAmount = 37.25m
                         },
@@ -304,7 +304,7 @@ namespace RestaurantReservation.Db.Migrations
                         {
                             OrderId = 4,
                             EmployeeId = 4,
-                            OrderDate = new DateTime(2023, 9, 19, 13, 55, 56, 107, DateTimeKind.Local).AddTicks(6982),
+                            OrderDate = new DateTime(2023, 9, 19, 22, 42, 0, 865, DateTimeKind.Local).AddTicks(9557),
                             ReservationId = 4,
                             TotalAmount = 89.75m
                         },
@@ -312,7 +312,7 @@ namespace RestaurantReservation.Db.Migrations
                         {
                             OrderId = 5,
                             EmployeeId = 5,
-                            OrderDate = new DateTime(2023, 9, 20, 13, 55, 56, 107, DateTimeKind.Local).AddTicks(6984),
+                            OrderDate = new DateTime(2023, 9, 20, 22, 42, 0, 865, DateTimeKind.Local).AddTicks(9560),
                             ReservationId = 5,
                             TotalAmount = 55.00m
                         });
@@ -428,7 +428,7 @@ namespace RestaurantReservation.Db.Migrations
                             ReservationId = 1,
                             CustomerId = 1,
                             PartySize = 4,
-                            ReservationDate = new DateTime(2023, 9, 16, 13, 55, 56, 108, DateTimeKind.Local).AddTicks(1528),
+                            ReservationDate = new DateTime(2023, 9, 16, 22, 42, 0, 866, DateTimeKind.Local).AddTicks(6975),
                             RestaurantId = 1,
                             TableId = 1
                         },
@@ -437,7 +437,7 @@ namespace RestaurantReservation.Db.Migrations
                             ReservationId = 2,
                             CustomerId = 2,
                             PartySize = 6,
-                            ReservationDate = new DateTime(2023, 9, 17, 13, 55, 56, 108, DateTimeKind.Local).AddTicks(1539),
+                            ReservationDate = new DateTime(2023, 9, 17, 22, 42, 0, 866, DateTimeKind.Local).AddTicks(6995),
                             RestaurantId = 1,
                             TableId = 2
                         },
@@ -446,7 +446,7 @@ namespace RestaurantReservation.Db.Migrations
                             ReservationId = 3,
                             CustomerId = 3,
                             PartySize = 5,
-                            ReservationDate = new DateTime(2023, 9, 18, 13, 55, 56, 108, DateTimeKind.Local).AddTicks(1541),
+                            ReservationDate = new DateTime(2023, 9, 18, 22, 42, 0, 866, DateTimeKind.Local).AddTicks(6999),
                             RestaurantId = 2,
                             TableId = 3
                         },
@@ -455,7 +455,7 @@ namespace RestaurantReservation.Db.Migrations
                             ReservationId = 4,
                             CustomerId = 4,
                             PartySize = 8,
-                            ReservationDate = new DateTime(2023, 9, 19, 13, 55, 56, 108, DateTimeKind.Local).AddTicks(1549),
+                            ReservationDate = new DateTime(2023, 9, 19, 22, 42, 0, 866, DateTimeKind.Local).AddTicks(7002),
                             RestaurantId = 2,
                             TableId = 4
                         },
@@ -464,7 +464,7 @@ namespace RestaurantReservation.Db.Migrations
                             ReservationId = 5,
                             CustomerId = 5,
                             PartySize = 6,
-                            ReservationDate = new DateTime(2023, 9, 20, 13, 55, 56, 108, DateTimeKind.Local).AddTicks(1551),
+                            ReservationDate = new DateTime(2023, 9, 20, 22, 42, 0, 866, DateTimeKind.Local).AddTicks(7006),
                             RestaurantId = 3,
                             TableId = 5
                         });

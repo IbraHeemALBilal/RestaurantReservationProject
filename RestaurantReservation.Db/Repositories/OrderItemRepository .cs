@@ -31,7 +31,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<IEnumerable<OrderItem>> GetAllAsync()
+        public async Task<List<OrderItem>> GetAllAsync()
         {
             return await _dbContext.OrderItems.ToListAsync();
         }

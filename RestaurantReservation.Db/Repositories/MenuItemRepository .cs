@@ -31,7 +31,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<IEnumerable<MenuItem>> GetAllAsync()
+        public async Task<List<MenuItem>> GetAllAsync()
         {
             return await _dbContext.MenuItems.ToListAsync();
         }
@@ -61,6 +61,19 @@ namespace RestaurantReservation.Db.Repositories
                 _dbContext.MenuItems.Remove(menuItem);
                 await _dbContext.SaveChangesAsync();
             }
+        }
+        public async Task<List<MenuItem>> ListOrderedMenuItemsAsync(int reservationId)
+        {
+            var context = RestaurantReservationDbContext.Instance;
+            var orderedMenuItems = await (from r in context.Reservations
+                                          join o in context.Orders on r.ReservationId equals o.ReservationId
+                                          join oi in context.OrderItems on o.OrderId equals oi.OrderId
+                                          join mi in context.MenuItems on oi.MenuitemId equals mi.MenuItemId
+                                          where r.ReservationId == reservationId
+                                          select mi)
+                                          .ToListAsync();
+
+            return orderedMenuItems;
         }
     }
 }

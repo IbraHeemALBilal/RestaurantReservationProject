@@ -1,10 +1,10 @@
 ﻿using RestaurantReservation.Db.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace RestaurantReservation.Db.Repositories
 {
@@ -31,7 +31,7 @@ namespace RestaurantReservation.Db.Repositories
                 return _instance;
             }
         }
-        public async Task<IEnumerable<Employee>> GetAllAsync()
+        public async Task<List<Employee>> GetAllAsync()
         {
             return await _dbContext.Employees.ToListAsync();
         }
@@ -62,4 +62,10 @@ namespace RestaurantReservation.Db.Repositories
                 await _dbContext.SaveChangesAsync();
             }
         }
+        public async Task< List<Employee>> ListManagersAsync()
+        {
+            return await _dbContext.Employees.Where(e => e.Position == "Manager").ToListAsync();
+        }
+
+    }
 }

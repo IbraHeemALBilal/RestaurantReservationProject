@@ -30,7 +30,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<IEnumerable<Reservation>> GetAllAsync()
+        public async Task<List<Reservation>> GetAllAsync()
         {
             return await _dbContext.Reservations.ToListAsync();
         }
@@ -60,6 +60,10 @@ namespace RestaurantReservation.Db.Repositories
                 _dbContext.Reservations.Remove(reservation);
                 await _dbContext.SaveChangesAsync();
             }
+        }
+        public async Task<List<Reservation>> GetReservationsByCustomerAsync(int CustomerId)
+        {
+            return await _dbContext.Reservations.Where(r=>r.CustomerId== CustomerId).ToListAsync();
         }
     }
 }
