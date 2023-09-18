@@ -25,10 +25,10 @@ namespace RestaurantReservation.Db.Config
             builder.Property(oi => oi.ItemId).IsRequired();
             builder.Property(oi => oi.Quantity).IsRequired();
 
-            builder.HasData(LoadOrderItems());
+            //builder.HasData(LoadOrderItems());
         }
 
-        private static List<OrderItem> LoadOrderItems()
+        /*private static List<OrderItem> LoadOrderItems()
         {
             return new List<OrderItem>
             {
@@ -38,6 +38,8 @@ namespace RestaurantReservation.Db.Config
                 new OrderItem { OrderItemId = 4, OrderId = 4, MenuitemId = 4, ItemId = 104, Quantity = 2 },
                 new OrderItem { OrderItemId = 5, OrderId = 5, MenuitemId = 5, ItemId = 105, Quantity = 4 }
             };
-        }
+        }*/
     }
 }
+
+        

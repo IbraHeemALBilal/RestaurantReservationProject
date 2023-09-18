@@ -37,9 +37,9 @@ namespace RestaurantReservation.Db.Config
             builder.HasMany(r => r.Reservations)
                 .WithOne(re => re.Restaurant)
                 .HasForeignKey(re => re.RestaurantId);
-            builder.HasData(LoadRestaurants());
+            //builder.HasData(LoadRestaurants());
         }
-        private static List<Restaurant> LoadRestaurants()
+        /*private static List<Restaurant> LoadRestaurants()
         {
             return new List<Restaurant>
             {
@@ -84,7 +84,7 @@ namespace RestaurantReservation.Db.Config
                   OpeningHours = "Thu-Sun: 9 AM - 7 PM"
                   }
             };
-        }
+        }*/
 
     }
 }

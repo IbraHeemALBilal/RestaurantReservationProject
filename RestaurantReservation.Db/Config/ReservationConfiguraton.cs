@@ -34,10 +34,10 @@ namespace RestaurantReservation.Db.Config
                 .HasForeignKey(o => o.ReservationId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasData(LoadReservations());
+            //builder.HasData(LoadReservations());
         }
 
-        private static List<Reservation> LoadReservations()
+        /*private static List<Reservation> LoadReservations()
         {
             return new List<Reservation>
             {
@@ -47,6 +47,6 @@ namespace RestaurantReservation.Db.Config
                 new Reservation { ReservationId = 4, CustomerId = 4, RestaurantId = 2, TableId = 4, ReservationDate = DateTime.Now.AddDays(4), PartySize = 8 },
                 new Reservation { ReservationId = 5, CustomerId = 5, RestaurantId = 3, TableId = 5, ReservationDate = DateTime.Now.AddDays(5), PartySize = 6 }
             };
-        }
+        }*/
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using RestaurantReservation.Db.Views;
 
 namespace RestaurantReservation.Db.Repositories
 {
@@ -66,6 +67,12 @@ namespace RestaurantReservation.Db.Repositories
         {
             return await _dbContext.Employees.Where(e => e.Position == "Manager").ToListAsync();
         }
+
+        public async Task<List<EmployeeWithRestaurantDetails>> GetEmployeesWithRestaurantDetailsAsync()
+        {
+            return await _dbContext.EmployeesWithRestaurantDetails.ToListAsync();
+        }
+
 
     }
 }

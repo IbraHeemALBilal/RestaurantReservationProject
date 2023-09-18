@@ -18,10 +18,10 @@ namespace RestaurantReservation.Db.Config
                 .WithMany(r => r.Tables)
                 .HasForeignKey(t => t.RestaurantId);
 
-            builder.HasData(LoadTables());
+            //builder.HasData(LoadTables());
         }
 
-        private static List<Table> LoadTables()
+        /*private static List<Table> LoadTables()
         {
             return new List<Table>
             {
@@ -31,6 +31,6 @@ namespace RestaurantReservation.Db.Config
                 new Table { TableId = 4, RestaurantId = 2, Capacity = 8 },
                 new Table { TableId = 5, RestaurantId = 3, Capacity = 6 }
             };
-        }
+        }*/
     }
 }

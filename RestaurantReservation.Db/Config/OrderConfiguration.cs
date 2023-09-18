@@ -24,10 +24,10 @@ namespace RestaurantReservation.Db.Config
                 .WithMany(e => e.Orders)
                 .HasForeignKey(o => o.EmployeeId);
 
-            builder.HasData(LoadOrders());
+            //builder.HasData(LoadOrders());
         }
 
-        private static List<Order> LoadOrders()
+        /*private static List<Order> LoadOrders()
         {
             return new List<Order>
             {
@@ -37,6 +37,6 @@ namespace RestaurantReservation.Db.Config
                 new Order { OrderId = 4, ReservationId = 4, EmployeeId = 4, OrderDate = DateTime.Now.AddDays(4), TotalAmount = 89.75m },
                 new Order { OrderId = 5, ReservationId = 5, EmployeeId = 5, OrderDate = DateTime.Now.AddDays(5), TotalAmount = 55.00m }
             };
-        }
+        }*/
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RestaurantReservation.Db.Entities;
 
+
 namespace RestaurantReservation.Db.Repositories
 {
     public class RestaurantRepository : IRepository<Restaurant>
@@ -16,7 +17,6 @@ namespace RestaurantReservation.Db.Repositories
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
-
         public static RestaurantRepository Instance
         {
             get
@@ -61,5 +61,14 @@ namespace RestaurantReservation.Db.Repositories
                 await _dbContext.SaveChangesAsync();
             }
         }
+       /* public decimal GetTotalRevenueForRestaurant(int restaurantId)
+        {
+            var sql = $"SELECT dbo.CalculateTotalRevenue({restaurantId}) AS TotalRevenue";
+            var totalRevenue = _dbContext.Database.ExecuteSqlRaw<decimal>(sql);
+
+            return totalRevenue;
+        }*/
+
+
     }
 }

@@ -29,9 +29,9 @@ namespace RestaurantReservation.Db.Config
                 .WithOne(o => o.Employee)
                 .HasForeignKey(o => o.EmployeeId);
 
-            builder.HasData(LoadEmployees());
+            //builder.HasData(LoadEmployees());
         }
-        private static List<Employee> LoadEmployees()
+        /*private static List<Employee> LoadEmployees()
         {
             return new List<Employee>
             {
@@ -78,6 +78,6 @@ namespace RestaurantReservation.Db.Config
 
 
             };
-        }
+        }*/
     }
 }

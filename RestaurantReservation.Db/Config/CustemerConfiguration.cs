@@ -27,9 +27,11 @@ namespace RestaurantReservation.Db.Config
             builder.HasMany(c => c.Reservations)
             .WithOne(r => r.Customer)
             .HasForeignKey(r => r.CustomerId);
-            builder.HasData(LoadCustomers());
+            //builder.HasData(LoadCustomers());
         }
-        private static List<Customer> LoadCustomers()
+
+
+        /*private static List<Customer> LoadCustomers()
         {
             return new List<Customer>
             {
@@ -39,7 +41,7 @@ namespace RestaurantReservation.Db.Config
             new Customer { CustomerId = 4, FirstName = "Bob", LastName = "Williams", Email = "bob@example.com", PhoneNumber = "777-777-7777" },
             new Customer { CustomerId = 5, FirstName = "Eva", LastName = "Brown", Email = "eva@example.com", PhoneNumber = "888-888-8888" }
             };
-        }
+        }*/
 
     }
 }

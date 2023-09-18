@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantReservation.Db.Entities;
+using RestaurantReservation.Db.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,5 +58,7 @@ namespace RestaurantReservation.Db.Repositories
                 await _dbContext.SaveChangesAsync();
             }
         }
+
+
     }
 }

@@ -24,10 +24,10 @@ namespace RestaurantReservation.Db.Config
                 .WithMany(r => r.MenuItems)
                 .HasForeignKey(m => m.RestaurantId);
 
-            builder.HasData(LoadMenuItems());
+            //builder.HasData(LoadMenuItems());
         }
 
-        private static List<MenuItem> LoadMenuItems()
+        /*private static List<MenuItem> LoadMenuItems()
         {
             return new List<MenuItem>
             {
@@ -37,6 +37,6 @@ namespace RestaurantReservation.Db.Config
                 new MenuItem { MenuItemId = 4, RestaurantId = 2, Name = "Salad", Description = "Fresh garden salad with mixed greens and vinaigrette dressing", Price = 7.99m },
                 new MenuItem { MenuItemId = 5, RestaurantId = 3, Name = "Sushi", Description = "Assorted sushi rolls with soy sauce and wasabi", Price = 15.99m }
             };
-        }
+        }*/
     }
 }
